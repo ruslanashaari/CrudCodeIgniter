@@ -1,18 +1,17 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Welcome extends BaseController
+class Welcome extends CI_Controller
 {
-    public $title = 'First to CodeIgniter!';
 
     /**
      * Index Page for this controller.
      *
      * Maps to the following URL
-     *         http://example.com/index.php/welcome
-     *     - or -
-     *         http://example.com/index.php/welcome/index
-     *     - or -
+     *      http://example.com/index.php/welcome
+     *  - or -
+     *      http://example.com/index.php/welcome/index
+     *  - or -
      * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
@@ -20,14 +19,8 @@ class Welcome extends BaseController
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
     public function index()
     {
-        $this->load->helper('url');
-        $this->load->view('home');
+        $this->load->view('welcome_message');
     }
 }
