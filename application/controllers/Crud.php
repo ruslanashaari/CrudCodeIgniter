@@ -33,21 +33,31 @@ class Crud extends BaseController
 
     public function create()
     {
-        die('create');
+        $this->load->helper('url');
+        $this->load->helper('form');
+        $this->load->view('crud/create');
+    }
+
+    public function store()
+    {
+        die('store');
     }
 
     public function show()
     {
-        die('show');
+        $this->load->helper('url');
+        $this->load->view('crud/show');
     }
 
     public function edit()
     {
-        die('edit');
+        $this->load->helper('url');
+        $this->load->view('crud/edit');
     }
 
     public function destroy()
     {
-        die('destroy');
+        $this->load->helper('url');
+        $this->load->view('crud/destroy');
     }
 }
