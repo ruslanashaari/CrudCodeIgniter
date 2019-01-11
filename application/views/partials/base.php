@@ -36,10 +36,9 @@
 			<?php echo $content; ?>
 		</div>
 
-		<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+		<?php $this->load->view('partials/footer');?>
+		<?php $this->load->view('partials/script.php');?>
 
-		<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.3.1.min.js"); ?>"></script>
-		<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 	</div>
 </body>
 </html>
