@@ -1,35 +1,31 @@
-!Build/
-.last_cover_stats
-/META.yml
-/META.json
-/MYMETA.*
-*.o
-*.pm.tdy
-*.bs
+.DS_Store
 
-# Devel::Cover
-cover_db/
+application/cache/*
+!application/cache/index.html
 
-# Devel::NYTProf
-nytprof.out
+application/logs/*
+!application/logs/index.html
 
-# Dizt::Zilla
-/.build/
+!application/*/.htaccess
 
-# Module::Build
-_build/
-Build
-Build.bat
+composer.lock
 
-# Module::Install
-inc/
+user_guide_src/build/*
+user_guide_src/cilexer/build/*
+user_guide_src/cilexer/dist/*
+user_guide_src/cilexer/pycilexer.egg-info/*
+/vendor/
 
-# ExtUtils::MakeMaker
-/blib/
-/_eumm/
-/*.gz
-/Makefile
-/Makefile.old
-/MANIFEST.bak
-/pm_to_blib
-/*.zip
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+/tests/tests/
+/tests/results/
