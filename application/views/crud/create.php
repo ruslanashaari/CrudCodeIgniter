@@ -5,11 +5,37 @@
 	    <h6 class="card-subtitle mb-2 text-muted">Creating data</h6>
 	    <br>
 
+	    <?php if (!empty(validation_errors())) {?>
+	    	<div class="alert alert-danger">
+			    <label><?php echo validation_errors(); ?></label>
+		    </div>
+	    <?php }?>
+
 	    <?php echo form_open('crud/store'); ?>
-	    <label>Username: </label>
-	    <?php echo form_input('username', ''); ?><br>
-	    <label>Password: </label>
-	    <?php echo form_password('password', ''); ?>
+	    <table class="table">
+	    	<tr>
+	    		<td>Full Name:</td>
+	    		<td><?php echo form_input('fullname', '', ['class' => 'form-control']); ?></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Username:</td>
+	    		<td><?php echo form_input('username', '', ['class' => 'form-control']); ?></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Email:</td>
+	    		<td><?php echo form_input('email', '', ['class' => 'form-control']); ?></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Password:</td>
+				<td><?php echo form_password('password', '', ['class' => 'form-control']); ?></td>
+	    	</tr>
+	    </table>
+	    <hr>
+	    	<div class="row">
+	    			<div class="col-md-12 text-center">
+			    		<?php echo form_submit('mysubmit', 'Submit', ['class' => 'btn btn-primary form-control col-md-3']); ?>
+	    			</div>
+	    	</div>
 	  </div>
 	</div>
 </div>
