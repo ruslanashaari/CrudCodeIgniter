@@ -23,41 +23,50 @@ class Crud extends BaseController
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('users_model');
+        $this->load->helper('url');
     }
 
     public function index()
     {
-        $this->load->helper('url');
         $this->load->view('home');
     }
 
     public function create()
     {
-        $this->load->helper('url');
         $this->load->helper('form');
         $this->load->view('crud/create');
     }
 
     public function store()
     {
-        die('store');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+
+        if (!$this->form_validation->run()) {
+            $this->load->view('crud/create');
+        }
+
+        $this->users_model->insert();
+        redirect('/crud/show');
     }
 
     public function show()
     {
-        $this->load->helper('url');
-        $this->load->view('crud/show');
+        $data['users'] = $this->users_model->retrieve();
+        $this->load->view('crud/show', $data);
     }
 
     public function edit()
     {
-        $this->load->helper('url');
         $this->load->view('crud/edit');
     }
 
     public function destroy()
     {
-        $this->load->helper('url');
         $this->load->view('crud/destroy');
     }
 }
