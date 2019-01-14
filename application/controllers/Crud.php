@@ -29,7 +29,8 @@ class Crud extends BaseController
 
     public function index()
     {
-        $this->load->view('home');
+        $data['users'] = $this->users_model->retrieve();
+        $this->load->view('crud/index', $data);
     }
 
     public function create()
