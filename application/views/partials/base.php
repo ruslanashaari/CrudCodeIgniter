@@ -30,7 +30,7 @@
 	</style>
 </head>
 <body>
-	<h1><?php echo $this->title; ?></h1>
+	<h1><a href="<?php echo base_url(); ?>"><?php echo $this->title; ?></a></h1>
 
 	<div class="container">
 		<div id="body" style="padding-top: 10px;">
