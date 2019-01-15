@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Crud extends BaseController
 {
-    public $title = 'First to CodeIgniter';
+    public $title = 'CodeIgniter';
 
     /**
      * Index Page for this controller.
@@ -25,6 +25,7 @@ class Crud extends BaseController
         parent::__construct();
         $this->load->model('users_model');
         $this->load->helper('url');
+        $this->load->helper('form');
     }
 
     public function index()
@@ -35,7 +36,6 @@ class Crud extends BaseController
 
     public function create()
     {
-        $this->load->helper('form');
         $this->load->view('crud/create');
     }
 
@@ -55,19 +55,21 @@ class Crud extends BaseController
         redirect('/crud/show');
     }
 
-    public function show()
+    public function show($id)
     {
-        $data['users'] = $this->users_model->retrieve();
+        $data['user'] = $this->users_model->retrieve($id);
+
         $this->load->view('crud/show', $data);
     }
 
-    public function edit()
+    public function edit($id)
     {
         $this->load->view('crud/edit');
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-        $this->load->view('crud/destroy');
+        $this->users_model->delete($id);
+        redirect('/crud/index');
     }
 }
