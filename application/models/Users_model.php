@@ -10,10 +10,15 @@ class Users_model extends CI_Model
         $this->load->database();
     }
 
-    public function retrieve()
+    public function retrieve($id = null)
     {
-        $query = $this->db->get('users');
-        return $query->result_array();
+        if (is_null($id)) {
+            $query = $this->db->get('users');
+            return $query->result();
+        }
+
+        $query = $this->db->get_where('users', ['id' => $id]);
+        return $query->row();
     }
 
     public function insert()
@@ -26,5 +31,10 @@ class Users_model extends CI_Model
         ];
 
         return $this->db->insert('users', $data);
+    }
+
+    public function delete($id)
+    {
+        return $this->db->delete('users', ['id' => $id]);
     }
 }
