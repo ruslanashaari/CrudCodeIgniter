@@ -30,7 +30,7 @@
 
 	<div class="card" style="width: 100%; margin: 10px;">
 		<div class="card-body">
-			<h5 class="card-title">User List</h5>
+			<h5 class="card-title">Users</h5>
 		</div>
 		<table class="table table-striped css-serial">
 			<thead>
@@ -45,10 +45,14 @@
 			<?php foreach ($users as $user) {?>
 				<tr>
 					<td></td>
-					<td><?php echo $user['email']; ?></td>
-					<td><?php echo $user['username']; ?></td>
-					<td><?php echo $user['fullname']; ?></td>
-					<td></td>
+					<td><?php echo $user->email; ?></td>
+					<td><?php echo $user->username; ?></td>
+					<td><?php echo $user->fullname; ?></td>
+					<td>
+						<a href="<?php echo base_url() . 'crud/show/' . $user->id; ?>" class="btn btn-info btn-sm">View</a>
+						<a href="<?php echo base_url() . 'crud/edit/' . $user->id; ?>" class="btn btn-warning btn-sm">Edit</a>
+						<a href="<?php echo base_url() . 'crud/destroy/' . $user->id; ?>" class="btn btn-danger btn-sm">Delete</a>
+					</td>
 				</tr>
 			<?php }?>
 		</table>
