@@ -1,25 +1,28 @@
 <div class="row">
 	<div class="card" style="width: 100%; margin: 10px;">
 		<div class="card-body">
-			<h5 class="card-title">User List</h5>
+			<h5 class="card-title">
+				User Profile
+			    	<a href="<?php echo base_url('crud/edit/' . $user->id) ?>" class="btn btn-primary float-right">Edit Profile</a>
+			</h5>
 		</div>
-		<table class="table table-dark table-striped">
-			<thead>
-				<td>Id</td>
-				<td>Email</td>
-				<td>Username</td>
-				<td>Name</td>
-				<td>Action</td>
-			</thead>
-			<?php foreach ($users as $user) {?>
-				<tr>
-					<td></td>
-					<td><?php echo $user['email']; ?></td>
-					<td><?php echo $user['username']; ?></td>
-					<td><?php echo $user['fullname']; ?></td>
-					<td></td>
-				</tr>
-			<?php }?>
-		</table>
+		<table class="table table-striped">
+	    	<tr>
+	    		<td>Name:</td>
+	    		<td><label class="form-control"><?php echo $user->fullname; ?></label></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Username:</td>
+	    		<td><label class="form-control"><?php echo $user->username; ?></label></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Email:</td>
+	    		<td><label class="form-control"><?php echo $user->email; ?></label></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Password:</td>
+	    		<td><label class="form-control"><?php echo $user->password; ?></label></td>
+	    	</tr>
+	    </table>
 	</div>
 </div>
