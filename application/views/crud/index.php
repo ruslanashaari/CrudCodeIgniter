@@ -1,36 +1,43 @@
 <div class="row">
-	<div class="card" style="width: 24%; margin: 5px;">
+	<div class="card" style="width: 24%; margin: 5px; color: red;">
 	  <div class="card-body">
-	    <h5 class="card-title">New User</h5>
-	    <p class="card-text text-muted">Implementation of inserting new user record into database.</p>
-	    <a href="<?php echo base_url() . 'crud/create' ?>" class="btn btn-primary">Create</a>
+	  	<h1 class="text-center" style="font-size: 100px;"><?php echo $total_users; ?></h1>
+	  </div>
+	  <div class="card-footer" style="background-color: #007bff;">
+	  	<h2 class="text-center" style="color: white;">Total Users</h2>
 	  </div>
 	</div>
-	<div class="card" style="width: 24%; margin: 5px;">
+	<div class="card" style="width: 24%; margin: 5px; color: red;">
 	  <div class="card-body">
-	    <h5 class="card-title">New User</h5>
-	    <p class="card-text text-muted">Implementation of inserting new user record into database.</p>
-	    <a href="<?php echo base_url() . 'crud/create' ?>" class="btn btn-success">Create</a>
+	  	<h1 class="text-center" style="font-size: 100px;">90</h1>
+	  </div>
+	  <div class="card-footer" style="background-color: #2c3e50;">
+	  	<h2 class="text-center" style="color: white;">Verified Users</h2>
 	  </div>
 	</div>
-	<div class="card" style="width: 24%; margin: 5px;">
+	<div class="card" style="width: 24%; margin: 5px; color: red;">
 	  <div class="card-body">
-	    <h5 class="card-title">New User</h5>
-	    <p class="card-text text-muted">Implementation of inserting new user record into database.</p>
-	    <a href="<?php echo base_url() . 'crud/create' ?>" class="btn btn-warning">Create</a>
+	  	<h1 class="text-center" style="font-size: 100px;">90</h1>
+	  </div>
+	  <div class="card-footer" style="background-color: #EA2027;">
+	  	<h2 class="text-center" style="color: white;">Total Users</h2>
 	  </div>
 	</div>
-	<div class="card" style="width: 24%; margin: 5px;">
+	<div class="card" style="width: 24%; margin: 5px; color: red;">
 	  <div class="card-body">
-	    <h5 class="card-title">New User</h5>
-	    <p class="card-text text-muted">Implementation of inserting new user record into database.</p>
-	    <a href="<?php echo base_url() . 'crud/create' ?>" class="btn btn-danger">Create</a>
+	  	<h1 class="text-center" style="font-size: 100px;">90</h1>
+	  </div>
+	  <div class="card-footer" style="background-color: #5f27cd;">
+	  	<h2 class="text-center" style="color: white;">Total Users</h2>
 	  </div>
 	</div>
 
 	<div class="card" style="width: 100%; margin: 10px;">
 		<div class="card-body">
-			<h5 class="card-title">Users</h5>
+			<h5 class="card-title">
+				Users
+			    <a href="<?php echo base_url() . 'crud/create' ?>" class="btn btn-primary float-right">Create User</a>
+			</h5>
 		</div>
 		<table class="table table-striped css-serial">
 			<thead>

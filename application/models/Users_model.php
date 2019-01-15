@@ -37,4 +37,22 @@ class Users_model extends CI_Model
     {
         return $this->db->delete('users', ['id' => $id]);
     }
+
+    public function update()
+    {
+        $data = [
+            'fullname' => $this->input->post('fullname'),
+            'username' => $this->input->post('username'),
+            'email'    => $this->input->post('email'),
+            'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
+        ];
+
+        $this->db->where('id', $this->input->post('id'));
+        return $this->db->update('users', $data);
+    }
+
+    public function total_users()
+    {
+        return $this->db->count_all('users');
+    }
 }

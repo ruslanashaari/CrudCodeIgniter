@@ -2,7 +2,7 @@
 	<div class="card" style="width: 100%; margin: 10px;">
 	  <div class="card-body">
 	    <h5 class="card-title">Create</h5>
-	    <h6 class="card-subtitle mb-2 text-muted">Creating data</h6>
+	    <h6 class="card-subtitle mb-2 text-muted">Creating new user</h6>
 	    <br>
 
 	    <?php if (!empty(validation_errors())) {?>

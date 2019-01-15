@@ -30,7 +30,9 @@ class Crud extends BaseController
 
     public function index()
     {
-        $data['users'] = $this->users_model->retrieve();
+        $data['users']       = $this->users_model->retrieve();
+        $data['total_users'] = $this->users_model->total_users();
+
         $this->load->view('crud/index', $data);
     }
 
@@ -41,7 +43,6 @@ class Crud extends BaseController
 
     public function store()
     {
-        $this->load->helper('form');
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('username', 'Username', 'required');
@@ -64,7 +65,15 @@ class Crud extends BaseController
 
     public function edit($id)
     {
-        $this->load->view('crud/edit');
+        $data['user'] = $this->users_model->retrieve($id);
+
+        $this->load->view('crud/edit', $data);
+    }
+
+    public function update()
+    {
+        $this->users_model->update();
+        redirect('crud/show/' . $this->input->post('id'));
     }
 
     public function destroy($id)

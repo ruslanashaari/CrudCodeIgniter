@@ -19,10 +19,6 @@
 	    		<td>Email:</td>
 	    		<td><label class="form-control"><?php echo $user->email; ?></label></td>
 	    	</tr>
-	    	<tr>
-	    		<td>Password:</td>
-	    		<td><label class="form-control"><?php echo $user->password; ?></label></td>
-	    	</tr>
 	    </table>
 	</div>
 </div>
