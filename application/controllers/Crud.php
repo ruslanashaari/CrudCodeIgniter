@@ -54,7 +54,7 @@ class Crud extends BaseController
         }
 
         $this->users_model->insert();
-        redirect('/crud/show');
+        redirect('/crud');
     }
 
     public function show($id)
