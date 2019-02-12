@@ -8,6 +8,6 @@ Checklist:
 - [ ] Implement soft delete
 - [ ] Implement user roles
 - [ ] Implement datatables
-- [ ] Implement blade engine in CI view
+- [X] Implement slice library as replacement for blade for CI (https://github.com/GustMartins/Slice-Library)
 - [X] Segregate views into partials than can be reused
 - [ ] else? open for suggestion

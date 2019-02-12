@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="card" style="width: 24%; margin: 5px; color: red;">
 	  <div class="card-body">
-	  	<h1 class="text-center" style="font-size: 100px;"><?php echo $total_users; ?></h1>
+	  	<h1 class="text-center" style="font-size: 100px;">{{ $total_users }}</h1>
 	  </div>
 	  <div class="card-footer" style="background-color: #007bff;">
 	  	<h2 class="text-center" style="color: white;">Total Users</h2>
@@ -36,7 +36,7 @@
 		<div class="card-body">
 			<h5 class="card-title">
 				Users
-			    <a href="<?php echo base_url() . 'crud/create' ?>" class="btn btn-primary float-right">Create User</a>
+			    <a href="{{ base_url() . 'crud/create' }}" class="btn btn-primary float-right">Create User</a>
 			</h5>
 		</div>
 		<table class="table table-striped css-serial">
@@ -49,19 +49,19 @@
 					<th>Action</th>
 				</tr>
 			</thead>
-			<?php foreach ($users as $user) {?>
+			@foreach($users as $user)
 				<tr>
 					<td></td>
-					<td><?php echo $user->email; ?></td>
-					<td><?php echo $user->username; ?></td>
-					<td><?php echo $user->fullname; ?></td>
+					<td>{{ $user->email; }}</td>
+					<td>{{ $user->username; }}</td>
+					<td>{{ $user->fullname; }}</td>
 					<td>
-						<a href="<?php echo base_url() . 'crud/show/' . $user->id; ?>" class="btn btn-info btn-sm">View</a>
-						<a href="<?php echo base_url() . 'crud/edit/' . $user->id; ?>" class="btn btn-warning btn-sm">Edit</a>
-						<a href="<?php echo base_url() . 'crud/destroy/' . $user->id; ?>" class="btn btn-danger btn-sm">Delete</a>
+						<a href="{{ base_url() . 'crud/show/' . $user->id; }}" class="btn btn-info btn-sm">View</a>
+						<a href="{{ base_url() . 'crud/edit/' . $user->id; }}" class="btn btn-warning btn-sm">Edit</a>
+						<a href="{{ base_url() . 'crud/destroy/' . $user->id; }}" class="btn btn-danger btn-sm">Delete</a>
 					</td>
 				</tr>
-			<?php }?>
+			@endforeach
 		</table>
 	</div>
 </div>
