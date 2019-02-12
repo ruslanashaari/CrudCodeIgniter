@@ -38,7 +38,7 @@
 		</div>
 
 		<?php $this->load->view('partials/footer');?>
-		<?php $this->load->view('partials/script.php');?>
+		<?php $this->load->view('partials/script');?>
 
 	</div>
 </body>
