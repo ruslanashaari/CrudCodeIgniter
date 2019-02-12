@@ -33,12 +33,13 @@ class Crud extends BaseController
         $data['users']       = $this->users_model->retrieve();
         $data['total_users'] = $this->users_model->total_users();
 
-        $this->load->view('crud/index', $data);
+        $this->slice->view('crud.index', $data);
+        // $this->load->view('crud/index', $data);
     }
 
     public function create()
     {
-        $this->load->view('crud/create');
+        $this->slice->view('crud/create');
     }
 
     public function store()
@@ -49,7 +50,7 @@ class Crud extends BaseController
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if (!$this->form_validation->run()) {
-            $this->load->view('crud/create');
+            $this->slice->view('crud/create');
         }
 
         $this->users_model->insert();
@@ -60,14 +61,14 @@ class Crud extends BaseController
     {
         $data['user'] = $this->users_model->retrieve($id);
 
-        $this->load->view('crud/show', $data);
+        $this->slice->view('crud/show', $data);
     }
 
     public function edit($id)
     {
         $data['user'] = $this->users_model->retrieve($id);
 
-        $this->load->view('crud/edit', $data);
+        $this->slice->view('crud/edit', $data);
     }
 
     public function update()
